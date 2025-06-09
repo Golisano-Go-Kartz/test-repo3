@@ -42,10 +42,17 @@ jobs:
         with:
           allowDirtyBuild: true
           projectPath: GGK/
-          targetPlatform: StandaloneWindows
+          targetPlatform: WebGL
 
       # Output
       - uses: actions/upload-artifact@v4
         with:
           name: Build
           path: build
+
+      # Deploy
+      - name: Deploy web game
+        uses: JamesIves/github-pages-deploy-action@v4.7.3
+        with: 
+          branch: gh-pages
+          folder: build/WebGL
