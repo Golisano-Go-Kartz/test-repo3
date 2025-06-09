@@ -16,10 +16,10 @@ jobs:
       # Cache
       - uses: actions/cache@v3
         with:
-          path: Library
-          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          path: GGK/Library
+          key: GGK/Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
           restore-keys: |
-            Library-
+            GGK/Library-
 
       # Test
       - name: Run tests
@@ -29,6 +29,7 @@ jobs:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
+          projectPath: GGK
           githubToken: ${{ secrets.GITHUB_TOKEN }}
 
       # Build
