@@ -51,8 +51,8 @@ jobs:
           path: build
 
       # Deploy
-      - name: Deploy web game
-        uses: JamesIves/github-pages-deploy-action@v4.7.3
-        with: 
-          branch: gh-pages
-          folder: build/WebGL
+      #- name: Deploy web game
+        #uses: JamesIves/github-pages-deploy-action@v4.7.3
+        #with: 
+          #branch: gh-pages
+          #folder: build/WebGL
