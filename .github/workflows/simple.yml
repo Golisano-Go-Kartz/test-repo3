@@ -39,6 +39,19 @@ jobs:
     needs: test
     steps:
 
+      # Checkout
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      # Cache
+      - uses: actions/cache@v3
+        with:
+          path: GGK/Library
+          key: GGK/Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            GGK/Library-
       # Build
       - name: Build project
         uses: game-ci/unity-builder@v4
@@ -64,6 +77,19 @@ jobs:
     needs: test
     steps:
 
+      # Checkout
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      # Cache
+      - uses: actions/cache@v3
+        with:
+          path: GGK/Library
+          key: GGK/Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            GGK/Library-
       # Build
       - name: Build project
         uses: game-ci/unity-builder@v4
